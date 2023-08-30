@@ -1,0 +1,53 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="create-table-status-account" author="jcfrrm">
+        <createTable tableName="status_account">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="status_type" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="other_column1" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- Add other columns specific to the StatusAccount entity here -->
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-table-pending" author="jcfrrm">
+        <createTable tableName="pending">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <!-- Add other columns specific to the Pending entity here -->
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-table-inactive" author="jcfrrm">
+        <createTable tableName="inactive">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <!-- Add other columns specific to the Inactive entity here -->
+
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create-table-active" author="jcfrrm">
+        <createTable tableName="active">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <!-- Add other columns specific to the Active entity here -->
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,31 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <changeSet id="create-table-account" author="jcfrrm">
+        <createTable tableName="account">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="salary" type="DECIMAL(10,2)" />
+            <column name="account_limit" type="DECIMAL(10,2)" />
+            <column name="balance" type="DECIMAL(10,2)" />
+            <column name="status_account_id" type="BIGINT" />
+            <column name="customer_id" type="UUID" />
+            <column name="manager_id" type="UUID" />
+
+            <!-- Add other columns of your entity here -->
+
+        </createTable>
+
+        <addForeignKeyConstraint
+                baseTableName="account"
+                baseColumnNames="status_account_id"
+                referencedTableName="status_account"
+                referencedColumnNames="id"
+                constraintName="fk_account_status"
+        />
+    </changeSet>
+</databaseChangeLog>
